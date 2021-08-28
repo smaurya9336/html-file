@@ -1,0 +1,69 @@
+<html>
+    <head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: black;
+    }
+    .box{
+        position:absolute;
+        width: 300px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation: images 20s linear infinite;
+    }
+    @keyframes images{
+        0%{
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        100%{
+            transform: perspective(1000px) rotateY(360deg);
+        }
+    }
+    .box span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transform: rotateY(calC(var(--i) * 45deg)) translateZ(400px);
+        -webkit-box-reflect: below 0px linear-gradient(transparent,transparent,#0004);
+  }
+    .box span img{
+        position:relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 5px solid bisque;
+        box-sizing: border-box;
+        box-shadow: cornflowerblue;
+        width: 200px;
+        height: 200px;
+
+    }
+    
+</style>
+    </head>
+    <body>
+        <div class="box">
+           <span style="--i:1;"><img src="sundarpi.jpg"></span>
+           <span style="--i:2;"><img src="kenthomson.jpg" ></span>
+           <span style="--i:3;"><img src="dennis.jpg"></span>
+           <span style="--i:4;"><img src="bjarne.jpg" height="600px" width="200px"></span>
+           <span style="--i:5;"><img src="kenthomson.jpg"></span>
+           <span style="--i:6;"><img src="guido.jpg"></span>
+           <span style="--i:7;"><img src="tim.jpg"></span>
+           <span style="--i:8;"><img src="james.jpg"></span>
+   
+        </div>
+    </body>
+</html>
