@@ -1,0 +1,33 @@
+body{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url('nature.jpg');
+    overflow: hidden;
+    background-size: cover ;
+}
+.bird{
+position: relative;
+width: 20% ;
+left: 100%;
+animation: bird 20s infinite;
+}
+@keyframes bird{
+    0%{
+        left:-20%;
+        top:5px;
+            }
+           25%{      
+                top:150px;
+           } 
+                    50%{    
+                        top: 30px;
+                            }
+                        75%{
+                                top:25px;
+                                    }
+                                    100%{
+                                        right: -100px;
+                                        top:105px;
+                                            }
+}
