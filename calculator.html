@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Me! A Calculator made by me</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Ubuntu:wgh@300&display=swap');
+        html,body{
+            height: 100%;
+            width: 100%;
+            font-family: 'Roboto',sans-serif;
+        }
+        .container{
+            background:black ;
+            height: 500px;
+            width: 340px;
+        }
+        .text-center{
+            text-align: center;
+        }
+    .equal{
+        background: red;
+        color: white;
+    }
+        .mx-auto{
+            margin: auto;
+        }
+    
+        .button{
+            padding: 20px;
+            margin: 0 3px;
+            border: 2px solid black;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 64px;
+            font-size: 20px;
+            font-weight: 600;
+            
+
+        }
+        .row{
+            margin:8px 0;
+
+        }
+        .row input{
+            margin: 0;
+            padding: 10px 0px;
+            border: 2px solid red;
+            border-radius: 5px;
+            font-size: 19px;
+            width: 291px;
+            background: red;
+            color: white;
+            font-weight: 600;
+            text-align: right;
+        }
+        .flex{
+            display: flex;
+        }
+        .flex-col{
+            flex-direction: column;
+        }
+.item-center{
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+    <h1 class="text-center">Welcome to Calculate Me!</h1>
+    <div class="container flex flex-col item-center mx-auto m-w-20">
+        <div class="row">
+            <input class="input" type="text"/>
+        </div>
+        <div class="row">
+            <button class="button">C</button>
+            <button class="button">%</button>
+            <button class="button">(</button>
+            <button class="button">)</button>
+        </div>
+        <div class="row">
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">+</button>
+        </div>
+        <div class="row">
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">-</button>
+        </div>
+        <div class="row">
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">*</button>
+        </div>
+        <div class="row">
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="button">/</button>
+            <button class="button equal">=</button>
+        </div>
+    </div>
+    <script>
+    let string="";
+    let buttons=document.querySelectorAll(".button");
+    Array.from(buttons).forEach((button)=>{
+        button.addEventListener('click',(e)=>{
+            if(e.target.innerHTML=='='){
+                string=eval(string);
+                document.querySelector("input").value=string;
+            }
+            else if(e.target.innerHTML=='C'){
+                string="";
+                document.querySelector("input").value=string;
+            }
+            else{
+                console.log(e.target)
+                string=string + e.target.innerHTML;
+                document.querySelector('input').value=string;
+            }
+        })
+    })
+    </script>
+</body>
+</html>
